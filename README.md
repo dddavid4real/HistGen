@@ -7,6 +7,14 @@
 - [ ] Release the original WSI data
 - [ ] Release model weights of pre-trained DINOv2 ViT-L feature extractor
 
+## Table of Contents
+- [Prerequisite](#prerequisite)
+- [HistGen WSI-report dataset](#histgen-wsi-report-dataset)
+- [Pre-trained DINOv2 ViT-L Feature Extractor](#pre-trained-dinov2-vit-l-feature-extractor)
+- [HistGen WSI Report Generation Model](#histgen-wsi-report-generation-model)
+  - [Training](#training)
+  - [Inference](#inference)
+
 ## Prerequisite
 Follow this instruction to create conda environment and install necessary packages:
 ```
