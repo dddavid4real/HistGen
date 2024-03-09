@@ -1,4 +1,4 @@
-name: r2gen
+name: histgen
 channels:
   - pytorch
   - nvidia
@@ -163,4 +163,4 @@ dependencies:
       - threadpoolctl==3.3.0
       - tqdm==4.66.2
       - tzdata==2024.1
-prefix: /home/zguobc/miniconda3/envs/r2gen
+prefix: /home/zguobc/miniconda3/envs/histgen
