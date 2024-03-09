@@ -1,5 +1,12 @@
 # Dataset, model weight, source code for paper "HistGen: Histopathology Report Generation via Local-Global Feature Encoding and Cross-modal Context Interaction"
 
+## TO-DO:
+- [x] Release the source code for training and testing HistGen
+- [x] Release the diagnostic report data
+- [ ] Release the DINOv2 ViT-L features of WSIs
+- [ ] Release the original WSI data
+- [ ] Release model weights of pre-trained DINOv2 ViT-L feature extractor
+
 ## Prerequisite
 Follow this instruction to create conda environment and install necessary packages:
 ```
@@ -9,6 +16,7 @@ conda env create -f requirements.yml
 ```
 ## HistGen WSI-report dataset
 Our curated dataset could be downloaded from <https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBWnB6K9-Dwr3wruaLyd_xTQ?e=IdWZmi>.
+
 
 The structure of this fold is shown as follows:
 ```
@@ -67,6 +75,7 @@ in which we have already split into train/val/test subsets with ratio 8:1:1. Bes
 We are organizing the training details, dataset used, and other information to release the pre-trained model. Please stay tuned for the update.
 
 ## HistGen WSI Report Generation Model
+### Training
 To try our model for training, validation, and testing, simply run the following commands:
 ```
 cd HistGen
@@ -74,3 +83,23 @@ conda activate histgen
 sh train_wsi_report.sh
 ```
 Before you run the script, please set the path and other hyperparameters in `train_wsi_report.sh`.
+
+### Inference
+To generate reports for WSIs in test set, you can run the following commands:
+```
+cd HistGen
+conda activate histgen
+sh test_wsi_report.sh
+```
+Similarly, remember to set the path and other hyperparameters in `test_wsi_report.sh`.
+
+## Issues
+- Please open new threads or report issues directly (for urgent blockers) to `zguobc@connect.ust.hk`
+- Immediate response to minor issues may not be available.
+
+## License and Usage
+If you find our work useful in your research, please consider citing our paper at:
+```
+
+```
+This code is made available under the Apache-2.0 License. For more details, please refer to the LICENSE file.
