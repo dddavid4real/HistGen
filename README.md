@@ -10,6 +10,14 @@
 ![](methodology.png)
 Overview of the proposed HistGen framework: (a) local-global hierarchical encoder module, (b) cross-modal context module, (c) decoder module, (d) transfer learning strategy for cancer diagnosis and prognosis.
 
+## Table of Contents
+- [TO-DO](#to-do)
+- [Prerequisite](#prerequisite)
+- [HistGen WSI-report dataset](#histgen-wsi-report-dataset)
+- [Pre-trained DINOv2 ViT-L Feature Extractor](#pre-trained-dinov2-vit-l-feature-extractor)
+- [HistGen WSI Report Generation Model](#histgen-wsi-report-generation-model)
+  - [Training](#training)
+  - [Inference](#inference)
 
 ## TO-DO:
 - [x] Release the source code for training and testing HistGen
@@ -17,14 +25,6 @@ Overview of the proposed HistGen framework: (a) local-global hierarchical encode
 - [ ] Release the DINOv2 ViT-L features of WSIs
 - [ ] Release the original WSI data
 - [ ] Release model weights of pre-trained DINOv2 ViT-L feature extractor
-
-## Table of Contents
-- [Prerequisite](#prerequisite)
-- [HistGen WSI-report dataset](#histgen-wsi-report-dataset)
-- [Pre-trained DINOv2 ViT-L Feature Extractor](#pre-trained-dinov2-vit-l-feature-extractor)
-- [HistGen WSI Report Generation Model](#histgen-wsi-report-generation-model)
-  - [Training](#training)
-  - [Inference](#inference)
 
 ## Prerequisite
 Follow this instruction to create conda environment and install necessary packages:
