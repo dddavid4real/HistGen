@@ -34,7 +34,7 @@ cd HistGen
 conda env create -f requirements.yml
 ```
 ## HistGen WSI-report dataset
-Our curated dataset could be downloaded from <https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBWnB6K9-Dwr3wruaLyd_xTQ?e=IdWZmi>.
+Our curated dataset could be downloaded from [here](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBWnB6K9-Dwr3wruaLyd_xTQ?e=IdWZmi).
 
 
 The structure of this fold is shown as follows:
