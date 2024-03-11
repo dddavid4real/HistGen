@@ -22,7 +22,7 @@ Overview of the proposed HistGen framework: (a) local-global hierarchical encode
 ## TO-DO:
 - [x] Release the source code for training and testing HistGen
 - [x] Release the diagnostic report data
-- [ ] Release the DINOv2 ViT-L features of WSIs
+- [x] Release the DINOv2 ViT-L features of WSIs
 - [ ] Release the original WSI data
 - [ ] Release model weights of pre-trained DINOv2 ViT-L feature extractor
 
