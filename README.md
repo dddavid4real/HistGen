@@ -123,7 +123,7 @@ sh test_wsi_report.sh
 Similarly, remember to set the path and other hyperparameters in `test_wsi_report.sh`.
 
 ### Transfer to Downstream Tasks
-In this paper, we consider WSI report generation task as an approach of vision-language pre-training, and we further fine-tune the pre-trained model on cancer subtyping and survival analysis tasks, with the strategy shown in [Methodology](#methodology) subfigure (d). For the implementation of downstream tasks, we recommand to use the [EasyMIL](https://github.com/birkhoffkiki/EasyMIL) repository, which is a flexible and easy-to-use toolbox for multiple instance learning (MIL) tasks developed by our team.
+In this paper, we consider WSI report generation task as an approach of vision-language pre-training, and we further fine-tune the pre-trained model on cancer subtyping and survival analysis tasks, with the strategy shown in [Methodology](#methodology) subfigure (d). For the implementation of downstream tasks, we recommend to use the [EasyMIL](https://github.com/birkhoffkiki/EasyMIL) repository, which is a flexible and easy-to-use toolbox for multiple instance learning (MIL) tasks developed by our team.
 
 We are currently organizing the pre-trained checkpoints and merging HistGen into EasyMIL. Please stay tuned for the update.
 
