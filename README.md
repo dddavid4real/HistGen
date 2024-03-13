@@ -19,13 +19,20 @@ Paper: <https://arxiv.org/abs/2403.05396>
 Overview of the proposed HistGen framework: (a) local-global hierarchical encoder module, (b) cross-modal context module, (c) decoder module, (d) transfer learning strategy for cancer diagnosis and prognosis.
 
 ## Table of Contents
-- [TO-DO](#to-do)
-- [Prerequisite](#prerequisite)
-- [HistGen WSI-report dataset](#histgen-wsi-report-dataset)
-- [Pre-trained DINOv2 ViT-L Feature Extractor](#pre-trained-dinov2-vit-l-feature-extractor)
-- [HistGen WSI Report Generation Model](#histgen-wsi-report-generation-model)
-  - [Training](#training)
-  - [Inference](#inference)
+- [Dataset, model weight, source code for paper "HistGen: Histopathology Report Generation via Local-Global Feature Encoding and Cross-modal Context Interaction"](#dataset-model-weight-source-code-for-paper-histgen-histopathology-report-generation-via-local-global-feature-encoding-and-cross-modal-context-interaction)
+    - [Highlight of our work:](#highlight-of-our-work)
+    - [Methodology](#methodology)
+  - [Table of Contents](#table-of-contents)
+  - [TO-DO:](#to-do)
+  - [Prerequisite](#prerequisite)
+  - [HistGen WSI-report dataset](#histgen-wsi-report-dataset)
+  - [Pre-trained DINOv2 ViT-L Feature Extractor](#pre-trained-dinov2-vit-l-feature-extractor)
+  - [HistGen WSI Report Generation Model](#histgen-wsi-report-generation-model)
+    - [Training](#training)
+    - [Inference](#inference)
+    - [Transfer to Downstream Tasks](#transfer-to-downstream-tasks)
+  - [Issues](#issues)
+  - [License and Usage](#license-and-usage)
 
 ## TO-DO:
 - [x] Release the source code for training and testing HistGen
@@ -134,6 +141,11 @@ We are currently organizing the pre-trained checkpoints and merging HistGen into
 ## License and Usage
 If you find our work useful in your research, please consider citing our paper at:
 ```
-
+@article{guo2024histgen,
+  title={HistGen: Histopathology Report Generation via Local-Global Feature Encoding and Cross-modal Context Interaction},
+  author={Guo, Zhengrui and Ma, Jiabo and Xu, Yingxue and Wang, Yihui and Wang, Liansheng and Chen, Hao},
+  journal={arXiv preprint arXiv:2403.05396},
+  year={2024}
+}
 ```
-This code is made available under the Apache-2.0 License. For more details, please refer to the LICENSE file.
+This repo is made available under the Apache-2.0 License. For more details, please refer to the LICENSE file.
