@@ -38,6 +38,7 @@ Overview of the proposed HistGen framework: (a) local-global hierarchical encode
 - [x] Release the source code for training and testing HistGen
 - [x] Release the diagnostic report data
 - [x] Release the DINOv2 ViT-L features of WSIs
+- [ ] Update checkpoints of HistGen and merge into EasyMIL for cancer diagnosis and survival analysis tasks
 - [ ] Release the original WSI data
 - [ ] Release model weights of pre-trained DINOv2 ViT-L feature extractor
 
