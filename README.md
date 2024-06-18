@@ -1,5 +1,7 @@
 # Dataset, model weight, source code for paper "HistGen: Histopathology Report Generation via Local-Global Feature Encoding and Cross-modal Context Interaction"
 
+#### ✨ **We are glad to announce that our paper is accepted by MICCAI2024!!**
+
 This repo contains the dataset, model weight, and source code for paper "HistGen: Histopathology Report Generation via Local-Global Feature Encoding and Cross-modal Context Interaction". We only support PyTorch for now. See our paper for a detailed description of **HistGen**.
 
 **HistGen: Histopathology Report Generation via Local-Global Feature Encoding and Cross-modal Context Interaction**\
