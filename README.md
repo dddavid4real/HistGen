@@ -28,7 +28,7 @@ Overview of the proposed HistGen framework: (a) local-global hierarchical encode
   - [TO-DO:](#to-do)
   - [Prerequisite](#prerequisite)
   - [HistGen WSI-report dataset](#histgen-wsi-report-dataset)
-  - [Pre-trained DINOv2 ViT-L Feature Extractor](#pre-trained-dinov2-vit-l-feature-extractor)
+  - [Preprocessing and Feature Extraction with Pre-trained DINOv2 ViT-L](#preprocessing-and-feature-extraction-with-pre-trained-dinov2-vit-l)
   - [HistGen WSI Report Generation Model](#histgen-wsi-report-generation-model)
     - [Training](#training)
     - [Inference](#inference)
@@ -40,9 +40,9 @@ Overview of the proposed HistGen framework: (a) local-global hierarchical encode
 - [x] Release the source code for training and testing HistGen
 - [x] Release the diagnostic report data
 - [x] Release the DINOv2 ViT-L features of WSIs
+- [x] Release model weights of pre-trained DINOv2 ViT-L feature extractor
+- [x] Release the source code for WSI patching and feature extraction
 - [ ] Update checkpoints of HistGen and merge into EasyMIL for cancer diagnosis and survival analysis tasks
-- [ ] Release the original WSI data
-- [ ] Release model weights of pre-trained DINOv2 ViT-L feature extractor
 
 ## Prerequisite
 Follow this instruction to create conda environment and install necessary packages:
@@ -52,7 +52,7 @@ cd HistGen
 conda env create -f requirements.yml
 ```
 ## HistGen WSI-report dataset
-Our curated dataset could be downloaded from [here](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBWnB6K9-Dwr3wruaLyd_xTQ?e=IdWZmi).
+Our curated dataset could be downloaded from [here](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBWnB6K9-Dwr3wruaLyd_xTQ?e=IdWZmi). For original WSIs, please download from [TCGA Data Portal](https://portal.gdc.cancer.gov/) using the case ids in the annotation file.
 
 
 The structure of this fold is shown as follows:
@@ -110,8 +110,26 @@ To reproduce our proposed HistGen model, please download the **dinov2_vitl** dir
 
 <!-- Note that before you use this json file for training, please run the `replace_pt_path.py` we provided to change the "image_path". Usage of `replace_pt_path.py` is written inside the python file. -->
 
-## Pre-trained DINOv2 ViT-L Feature Extractor
-We are organizing the training details, dataset used, and other information to release the pre-trained model. Please stay tuned for the update.
+## Preprocessing and Feature Extraction with Pre-trained DINOv2 ViT-L
+
+### WSI Preprocessing
+In this work, we adpoted and further accelerated [CLAM](https://github.com/mahmoodlab/CLAM) for preprocessing and feature extraction. We uploaded the minimal viable version of CLAM to this repo. For installation guide, we recommend to follow the original instructions [here](https://github.com/mahmoodlab/CLAM/blob/master/docs/INSTALLATION.md). To conduct preprocessing, please run the following commands:
+```
+cd HistGen
+cd CLAM
+conda activate clam
+sh patching_scripts/tcga-wsi-report.sh
+```
+
+### Feature Extraction
+To extract features of WSIs, please run the following commands:
+```
+cd HistGen
+cd CLAM
+conda activate clam
+sh extract_scripts/tcga-wsi-report.sh
+```
+in which we provide the ImageNet-pretrained ResNet, [Ctranspath](https://github.com/Xiyue-Wang/TransPath), [PLIP](https://github.com/PathologyFoundation/plip), and our pre-trained DINOv2 ViT-L feature extractor. Note that Ctranspath requires specific timm environment, see [here](https://github.com/Xiyue-Wang/TransPath) for more info.
 
 ## HistGen WSI Report Generation Model
 ### Training
