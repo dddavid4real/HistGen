@@ -10,7 +10,7 @@ Paper: <https://arxiv.org/abs/2403.05396>
 
 <!-- Link to our paper: [[arxiv]](https://arxiv.org/abs/2403.05396) -->
 
-### Highlight of our work:
+### Highlight of our work
 - We introduce **HistGen**, a multiple instance learning-empowered framework for histopathology report generation together with the first benchmark dataset for evaluation. 
 - Inspired by diagnostic and report-writing workflows, HistGen features two delicately designed modules, aiming to boost report generation by aligning whole slide images (WSIs) and diagnostic reports from local and global granularity. 
 - To achieve this, a local-global hierarchical encoder is developed for efficient visual feature aggregation from a region-to-slide perspective. Meanwhile, a cross-modal context module is proposed to explicitly facilitate alignment and interaction between distinct modalities, effectively bridging the gap between the extensive visual sequences of WSIs and corresponding highly summarized reports. 
@@ -22,10 +22,10 @@ Overview of the proposed HistGen framework: (a) local-global hierarchical encode
 
 ## Table of Contents
 - [Dataset, model weight, source code for paper "HistGen: Histopathology Report Generation via Local-Global Feature Encoding and Cross-modal Context Interaction"](#dataset-model-weight-source-code-for-paper-histgen-histopathology-report-generation-via-local-global-feature-encoding-and-cross-modal-context-interaction)
-    - [Highlight of our work:](#highlight-of-our-work)
+    - [Highlight of our work](#highlight-of-our-work)
     - [Methodology](#methodology)
   - [Table of Contents](#table-of-contents)
-  - [TO-DO:](#to-do)
+  - [TO-DO](#to-do)
   - [Prerequisite](#prerequisite)
   - [HistGen WSI-report dataset](#histgen-wsi-report-dataset)
   - [Preprocessing and Feature Extraction with Pre-trained DINOv2 ViT-L](#preprocessing-and-feature-extraction-with-pre-trained-dinov2-vit-l)
@@ -36,7 +36,7 @@ Overview of the proposed HistGen framework: (a) local-global hierarchical encode
   - [Issues](#issues)
   - [License and Usage](#license-and-usage)
 
-## TO-DO:
+## TO-DO
 - [x] Release the source code for training and testing HistGen
 - [x] Release the diagnostic report data
 - [x] Release the DINOv2 ViT-L features of WSIs
