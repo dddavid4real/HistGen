@@ -52,7 +52,7 @@ cd HistGen
 conda env create -f requirements.yml
 ```
 ## HistGen WSI-report dataset
-Our curated dataset could be downloaded from [here](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBWnB6K9-Dwr3wruaLyd_xTQ?e=IdWZmi). For original WSIs, please download from [TCGA Data Portal](https://portal.gdc.cancer.gov/) using the case ids in the annotation file.
+Our curated dataset could be downloaded from [here](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBvO9WwNM3TL9x-7-kg_liuA). For original WSIs, please download from [TCGA Data Portal](https://portal.gdc.cancer.gov/) using the case ids in the annotation file.
 
 
 The structure of this fold is shown as follows:
