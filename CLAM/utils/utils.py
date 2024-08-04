@@ -15,7 +15,7 @@ import torch.nn.functional as F
 import math
 from itertools import islice
 import collections
-from .survival_utils import collate_MIL_survival
+# from .survival_utils import collate_MIL_survival
 device=torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class SubsetSequentialSampler(Sampler):
@@ -55,10 +55,10 @@ def get_simple_loader(dataset, batch_size=1, num_workers=1):
 	loader = DataLoader(dataset, batch_size=batch_size, sampler = sampler.SequentialSampler(dataset), collate_fn = collate_MIL, **kwargs)
 	return loader 
 
-def get_simple_loader_survival(dataset, batch_size=1, num_workers=1):
-	kwargs = {'num_workers': 4, 'pin_memory': False, 'num_workers': num_workers} if device.type == "cuda" else {}
-	loader = DataLoader(dataset, batch_size=batch_size, sampler = sampler.SequentialSampler(dataset), collate_fn = collate_MIL_survival, **kwargs)
-	return loader
+# def get_simple_loader_survival(dataset, batch_size=1, num_workers=1):
+# 	kwargs = {'num_workers': 4, 'pin_memory': False, 'num_workers': num_workers} if device.type == "cuda" else {}
+# 	loader = DataLoader(dataset, batch_size=batch_size, sampler = sampler.SequentialSampler(dataset), collate_fn = collate_MIL_survival, **kwargs)
+# 	return loader
 
 def get_split_loader(split_dataset, training = False, testing = False, weighted = False, batch_size=1):
 	"""
