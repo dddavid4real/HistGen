@@ -131,6 +131,8 @@ sh extract_scripts/tcga-wsi-report.sh
 ```
 in which we provide the ImageNet-pretrained ResNet, [Ctranspath](https://github.com/Xiyue-Wang/TransPath), [PLIP](https://github.com/PathologyFoundation/plip), and our pre-trained DINOv2 ViT-L feature extractor. Note that Ctranspath requires specific timm environment, see [here](https://github.com/Xiyue-Wang/TransPath) for more info.
 
+🌟If Git LFS fails, please download the model checkpoint of our pre-trained DINOv2 feature extractor from this [link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBvO9WwNM3TL9x-7-kg_liuA).
+
 ## HistGen WSI Report Generation Model
 ### Training
 To try our model for training, validation, and testing, simply run the following commands:
