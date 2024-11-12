@@ -52,8 +52,13 @@ cd HistGen
 conda env create -f requirements.yml
 ```
 ## HistGen WSI-report dataset
-Our curated dataset could be downloaded from [here](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBvO9WwNM3TL9x-7-kg_liuA). For original WSIs, please download from [TCGA Data Portal](https://portal.gdc.cancer.gov/) using the case ids in the annotation file.
-
+✨ Our curated dataset is now available on HuggingFace Datasets! Click [here](https://huggingface.co/datasets/david4real/HistGen) to access the dataset. In the **Files and Versions** section, you could find the extracted DINOv2 features of WSIs with name *DINOv2_Features.z01~z14* and *DINOv2_Features.zip*. Please download all of them and them run the following commands to unzip the files:
+```
+zip -FF DINOv2_Features.zip --out WSI_Feature_DINOv2.zip
+unzip WSI_Feature_DINOv2.zip
+``` 
+Also, the paired diagnostic reports can be found from the above link with name *annotations.json*. 
+<!-- Our curated dataset could be downloaded from [here](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBvO9WwNM3TL9x-7-kg_liuA). -->
 
 The structure of this fold is shown as follows:
 ```
@@ -131,7 +136,9 @@ sh extract_scripts/tcga-wsi-report.sh
 ```
 in which we provide the ImageNet-pretrained ResNet, [Ctranspath](https://github.com/Xiyue-Wang/TransPath), [PLIP](https://github.com/PathologyFoundation/plip), and our pre-trained DINOv2 ViT-L feature extractor. Note that Ctranspath requires specific timm environment, see [here](https://github.com/Xiyue-Wang/TransPath) for more info.
 
-🌟If Git LFS fails, please download the model checkpoint of our pre-trained DINOv2 feature extractor from this [link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBvO9WwNM3TL9x-7-kg_liuA). After downloading, put it under HistGen/CLAM/models/ckpts/ .
+🌟If Git LFS fails, please download the model checkpoint of our pre-trained DINOv2 feature extractor from this [link](https://huggingface.co/datasets/david4real/HistGen). You could find the checkpoint for our pretrained DINOv2 feature extractor with name *dinov2_cpath_v1.pth*. After downloading, put it under HistGen/CLAM/models/ckpts/ .
+
+🌟 Note that if loading DINOv2 checkpoint runs into problems, the most possible case is that your checkpoint is broken, please redownload from the above link. 
 
 ## HistGen WSI Report Generation Model
 ### Training
