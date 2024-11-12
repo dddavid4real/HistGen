@@ -52,7 +52,7 @@ cd HistGen
 conda env create -f requirements.yml
 ```
 ## HistGen WSI-report dataset
-✨ Our curated dataset is now available on HuggingFace Datasets! Click [here](https://huggingface.co/datasets/david4real/HistGen) to access the dataset. In the **Files and Versions** section, you could find the extracted DINOv2 features of WSIs with name *DINOv2_Features.z01~z14* and *DINOv2_Features.zip*. Please download all of them and them run the following commands to unzip the files:
+✨ Our curated dataset is now available on HuggingFace Datasets! Click [here](https://huggingface.co/datasets/david4real/HistGen) to access the dataset. In the **Files and Versions** section, you could find the extracted DINOv2 features of WSIs with name *DINOv2_Features.z01~z14* and *DINOv2_Features.zip*. Please download all of them and then run the following commands to unzip the files:
 ```
 zip -FF DINOv2_Features.zip --out WSI_Feature_DINOv2.zip
 unzip WSI_Feature_DINOv2.zip
