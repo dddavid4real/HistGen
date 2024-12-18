@@ -121,7 +121,7 @@ in which **WSIs** denotes the original WSI data from TCGA, **dinov2_vitl** is th
 ~~in which we have already split into train/val/test subsets with ratio 8:1:1.~~\
 "id" denotes the case id of this report's corresponding WSI, "report" is the full refined text obtained after our proposed report cleaning pipeline, and "image_path" could be just ignored. 
 
-To reproduce our proposed HistGen model, please download the **dinov2_vitl** directory together with **annotation.json**.
+To reproduce our proposed HistGen model, please download the **dinov2_vitl** directory together with **annotation712_update.json**.
 
 <!-- Note that before you use this json file for training, please run the `replace_pt_path.py` we provided to change the "image_path". Usage of `replace_pt_path.py` is written inside the python file. -->
 
