@@ -36,6 +36,14 @@ Overview of the proposed HistGen framework: (a) local-global hierarchical encode
   - [Issues](#issues)
   - [License and Usage](#license-and-usage)
 
+## News
+- **2024-12-18**: Tokenizer for HistGen is uploaded, better decoding capability is unlocked. Check modules.tokenizers for details.
+- **2024-12-18**: Ground Truth Reports are further cleaned and uploaded. Check the HuggingFace Datasets for more details.
+- **2024-12-18**: Baselines models are uploaded.
+- **2024-11-12**: HistGen WSI-report dataset is available on HuggingFace Datasets! (Also the annotation files!)
+- **2024-08-10**: Codes for feature extraction (CLAM) is uploaded.
+- **2024-06-17**: Our paper is accepted by MICCAI2024! 🎉
+
 ## TO-DO
 - [x] Release the source code for training and testing HistGen
 - [x] Release the diagnostic report data
@@ -57,7 +65,8 @@ conda env create -f requirements.yml
 zip -FF DINOv2_Features.zip --out WSI_Feature_DINOv2.zip
 unzip WSI_Feature_DINOv2.zip
 ``` 
-Also, the paired diagnostic reports can be found from the above link with name *annotations.json*. 
+~~Also, the paired diagnostic reports can be found from the above link with name *annotations.json*.~~
+🌟 **Update**: The ground truth reports are further cleaned and uploaded. You could find the cleaned reports with name *annotations712_update.json*, which provides smoother and more precise descripted reports. Meanwhile, the train:val:test sets are split into 7:1:2.
 <!-- Our curated dataset could be downloaded from [here](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBvO9WwNM3TL9x-7-kg_liuA). -->
 
 The structure of this fold is shown as follows:
@@ -149,6 +158,13 @@ conda activate histgen
 sh train_wsi_report.sh
 ```
 Before you run the script, please set the path and other hyperparameters in `train_wsi_report.sh`. Note that **--image_dir** should be the path to the **dinov2_vitl** directory, and **--ann_path** should be the path to the **annotation.json** file.
+
+🌟 **Update:** we have included baseline models in our paper for training, including R2Gen, R2GenCMN, Show&Tell, Transformer, M2Transformer, and UpDownAtt modeles. Note that they are not originally designed to process WSIs, thus enormous number of patches in a WSI may lead to unaffordable computational overhead. Thus, we implement a simple image token selection mechanism before processing these patch tokens by these models, "uniform sampling", "cross attention", and "kmeans clustering" are provided. And selected token number can be chosen in the script "train_wsi_report_baselines.sh". To train one of these baseline models, please run the following commands:
+```
+cd HistGen
+conda activate histgen
+sh train_wsi_report_baselines.sh
+```
 
 ### Inference
 To generate reports for WSIs in test set, you can run the following commands:

@@ -1,13 +1,21 @@
 import torch
 import argparse
 import numpy as np
-from modules.tokenizers import Tokenizer
+from modules.tokenizers import Tokenizer, ModernTokenizer
 from modules.dataloaders import R2DataLoader
 from modules.metrics import compute_scores
 from modules.optimizers import build_optimizer, build_lr_scheduler
 from modules.trainer_AllinOne import Trainer
 from modules.loss import compute_loss
 from models.histgen_model import HistGenModel
+#* Baselines
+from models.r2gen import R2GenModel
+from models.r2gen_cmn import BaseCMNModel
+from models.M2Transformer import M2Transformer
+from models.PlainTransformer import PlainTransformer
+from models.ShowTellModel import ShowTell
+from models.UpDownAttn import UpDownAttn
+#*
 
 def parse_agrs():
     parser = argparse.ArgumentParser()
@@ -23,7 +31,7 @@ def parse_agrs():
     parser.add_argument('--num_workers', type=int, default=2, help='the number of workers for dataloader.')
     parser.add_argument('--batch_size', type=int, default=16, help='the number of samples for a batch')
     
-    parser.add_argument('--model_name', type=str, default='histgen', choices=['histgen'], help='model used for experiment')
+    parser.add_argument('--model_name', type=str, default='histgen', choices=['histgen', 'r2gen', 'r2gen_cmn', 'm2transformer', 'transformer', 'showtell', 'updown'], help='model used for experiment')
 
     # Model settings (for visual extractor)
     parser.add_argument('--visual_extractor', type=str, default='resnet101', help='the visual extractor to be used.')
@@ -101,14 +109,31 @@ def main():
     np.random.seed(args.seed)
     
         
-    tokenizer = Tokenizer(args)
+    # tokenizer = Tokenizer(args)
+    tokenizer = ModernTokenizer(args)
     
     train_dataloader = R2DataLoader(args, tokenizer, split='train', shuffle=True)
     val_dataloader = R2DataLoader(args, tokenizer, split='val', shuffle=False)
     test_dataloader = R2DataLoader(args, tokenizer, split='test', shuffle=False)
 
+    
     # build model architecture
-    model = HistGenModel(args, tokenizer)
+    if args.model_name == 'r2gen':
+        model = R2GenModel(args, tokenizer)
+    elif args.model_name == 'r2gen_cmn': 
+        model = BaseCMNModel(args, tokenizer)
+    elif args.model_name == 'm2transformer':
+        model = M2Transformer(args, tokenizer)
+    elif args.model_name == 'transformer':
+        model = PlainTransformer(args, tokenizer)
+    elif args.model_name == 'showtell':
+        model = ShowTell(args, tokenizer)
+    elif args.model_name == 'updown':
+        model = UpDownAttn(args, tokenizer)
+    elif args.model_name == 'histgen':
+        model = HistGenModel(args, tokenizer)
+    else:
+        raise ValueError('Invalid model name')
     
     # get function handles of loss and metrics
     criterion = compute_loss
