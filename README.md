@@ -158,7 +158,7 @@ cd HistGen
 conda activate histgen
 sh train_wsi_report.sh
 ```
-Before you run the script, please set the path and other hyperparameters in `train_wsi_report.sh`. Note that **--image_dir** should be the path to the **dinov2_vitl** directory, and **--ann_path** should be the path to the **annotation.json** file.
+Before you run the script, please set the path and other hyperparameters in `train_wsi_report.sh`. Note that **--image_dir** should be the path to the **dinov2_vitl** directory, and **--ann_path** should be the path to the **annotation712_update.json** file.
 
 🌟 **Update:** we have included baseline models in our paper for training, including R2Gen, R2GenCMN, Show&Tell, Transformer, M2Transformer, and UpDownAtt modeles. Note that they are not originally designed to process WSIs, thus enormous number of patches in a WSI may lead to unaffordable computational overhead. Thus, we implement a simple image token selection mechanism before processing these patch tokens by these models, "uniform sampling", "cross attention", and "kmeans clustering" are provided. And selected token number can be chosen in the script "train_wsi_report_baselines.sh". To train one of these baseline models, please run the following commands:
 ```
@@ -188,11 +188,13 @@ We are currently organizing the pre-trained checkpoints and merging HistGen into
 ## License and Usage
 If you find our work useful in your research, please consider citing our paper at:
 ```
-@article{guo2024histgen,
-  title={HistGen: Histopathology Report Generation via Local-Global Feature Encoding and Cross-modal Context Interaction},
+@inproceedings{guo2024histgen,
+  title={Histgen: Histopathology report generation via local-global feature encoding and cross-modal context interaction},
   author={Guo, Zhengrui and Ma, Jiabo and Xu, Yingxue and Wang, Yihui and Wang, Liansheng and Chen, Hao},
-  journal={arXiv preprint arXiv:2403.05396},
-  year={2024}
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={189--199},
+  year={2024},
+  organization={Springer}
 }
 ```
 This repo is made available under the Apache-2.0 License. For more details, please refer to the LICENSE file.
