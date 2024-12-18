@@ -65,7 +65,7 @@ conda env create -f requirements.yml
 zip -FF DINOv2_Features.zip --out WSI_Feature_DINOv2.zip
 unzip WSI_Feature_DINOv2.zip
 ``` 
-~~Also, the paired diagnostic reports can be found from the above link with name *annotations.json*.~~
+~~Also, the paired diagnostic reports can be found from the above link with name *annotations.json*.~~\
 🌟 **Update**: The ground truth reports are further cleaned and uploaded. You could find the cleaned reports with name *annotations712_update.json*, which provides smoother and more precise descripted reports. Meanwhile, the train:val:test sets are split into 7:1:2.
 <!-- Our curated dataset could be downloaded from [here](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zguobc_connect_ust_hk/EhmtBBT0n2lKtiCQt97eqcEBvO9WwNM3TL9x-7-kg_liuA). -->
 
