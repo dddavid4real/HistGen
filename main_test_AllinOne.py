@@ -46,7 +46,7 @@ def parse_agrs():
     parser.add_argument('--cmm_dim', type=int, default=512, help='the dimension of cmm dimension.')
     # for Local-global hierachical visual encoder
     parser.add_argument("--region_size", type=int, default=256, help="the size of the region for region transformer.")
-
+    parser.add_argument("--prototype_num", type=int, default=512, help="the number of visual prototypes for cross-modal interaction")
     # Sample related
     parser.add_argument('--sample_method', type=str, default='beam_search', help='the sample methods to sample a report.')
     parser.add_argument('--beam_size', type=int, default=3, help='the beam size when beam searching.')
